@@ -73,6 +73,7 @@ int main() {
 			schleife = 0;
 		printf("\n\n");
 	} while (schleife);
+	return 0;
 }
 
 /// Ziel:	Zwei Matrizen werden ausgelesen und vergleichen
