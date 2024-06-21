@@ -3,21 +3,27 @@
 #include <stdlib.h>
 #include <conio.h>
 
-#define DIM 3
+#define DIM 2
 #define NENNER_DIVISION 16384
 
+/// Ziel:	Zwei Matrizen werden ausgelesen und vergleichen
+/// Parameter: 2 Matrizen
+/// Return:	0 = Matrizen verschieden / 1 = Matrizen gleich
 int vergleicheMatrizen(int matrix1[DIM][DIM], int matrix2[DIM][DIM]);
 
-int ausgabeMatrix(int matrix[DIM][DIM]);
+/// Ziel: Matrix wird in der Konsole ausgegeben
+/// Parameter: Auszugebene Matrix
+/// Return:	/
+void ausgabeMatrix(int matrix[DIM][DIM]);
 
 int main() {
 	int matrix1[DIM][DIM];				//DIM * DIM Matrix
-	int matrix2[DIM][DIM];				//DIM * DIM Matrix 
+	int matrix2[DIM][DIM];				//DIM * DIM Matrix
 	int gleichheit = 0;					//Wird 1, wenn zwei Matrizen gleich
 	int schleife = 1;					//Wird auf 0 gesetzt, wenn das Programm nicht wiederholt werden soll
 	char eingabeWiederholung = '\0';	//Eingabe, ob Schleife wiederholt werden soll
 
-	srand((unsigned int)time(NULL));
+	srand((unsigned int)time(NULL));	//Generiert und initialisiert Pseudo-Zufallszahlen, anhand der aktuellen Zeit
 
 	//Startnachricht
 	printf("******************************************************\n");
@@ -50,7 +56,7 @@ int main() {
 		ausgabeMatrix(matrix2);
 		printf("\n");
 
-
+		//Gleicheit wird überprüft
 		gleichheit = vergleicheMatrizen(matrix1, matrix2);
 		if (gleichheit)
 			printf("Die Matrizen sind gleich.");
@@ -59,15 +65,19 @@ int main() {
 
 		//Abfrage, ob das Programm wiederholt werden soll
 		printf("\n\n");
-		printf("Soll das Programm wiederholt werden? (j/n): ");
+		printf("Wollen Sie weiter Matrizen vergleichen? (j/n): ");
 		eingabeWiederholung = _getche();
-		if (eingabeWiederholung == 'j' || eingabeWiederholung == 'J')
+		if ((eingabeWiederholung == 'j' || eingabeWiederholung == 'J'))
 			schleife = 1;
 		else
 			schleife = 0;
+		printf("\n\n");
 	} while (schleife);
 }
 
+/// Ziel:	Zwei Matrizen werden ausgelesen und vergleichen
+/// Parameter: 2 Matrizen
+/// Return:	0 = Matrizen verschieden / 1 = Matrizen gleich
 int vergleicheMatrizen(int matrix1[DIM][DIM], int matrix2[DIM][DIM]) {
 	for (int i = 0; i < DIM; i++) {
 		for (int j = 0; j < DIM; j++) {
@@ -78,12 +88,15 @@ int vergleicheMatrizen(int matrix1[DIM][DIM], int matrix2[DIM][DIM]) {
 	return 1;
 }
 
-int ausgabeMatrix(int matrix[DIM][DIM]) {
+/// Ziel: Matrix wird in der Konsole ausgegeben
+/// Parameter: Auszugebene Matrix
+/// Return:	/
+void ausgabeMatrix(int matrix[DIM][DIM]) {
 	for (int i = 0; i < DIM; i++) {
 		for (int j = 0; j < DIM; j++) {
 			printf("%2d", matrix[i][j]);
 		}
 		printf("\n");
 	}
-	return 0;
+	return;
 }
