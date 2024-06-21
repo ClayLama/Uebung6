@@ -37,7 +37,7 @@ int main() {
 
 	//Olli wird in der ersten Reihe platziert
 	platziereOlli(matrixHoersaal);
-	
+
 	printf("\nSitzplatzverteilung eine halbe Stunde vor der Vorlesung:\n");
 	ausgabeHoersaal(matrixHoersaal);
 
@@ -160,9 +160,8 @@ int platzFrei(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN], int reihePlatz, int
 		if (matrix[reihePlatz][spaltePlatz + 1])
 			return 0;
 		//Sitznachbar hat bereits Sitznachbar		if (spaltePlatz >= 2) {
-			if (matrix[reihePlatz][spaltePlatz - 2])
-				return 0;
-		}
+		if (matrix[reihePlatz][spaltePlatz - 2])
+			return 0;
 	}
 	return 1;
 }

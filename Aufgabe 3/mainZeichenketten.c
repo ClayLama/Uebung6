@@ -4,7 +4,7 @@
 #include "myString.h"
 
 int main() {
-	char string = "vier";
+	char string[10] = "vier";
 	leseString(string, 5);
 	return 0;
 }
