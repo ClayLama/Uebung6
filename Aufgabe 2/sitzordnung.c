@@ -6,19 +6,7 @@
 /// Ziel: Hörsaal wird in der Konsole ausgegeben
 /// Parameter: Auszugebene Matrix
 /// Return:	/
-void ausgabeHoersaal(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN]) {
-	for (int i = 0; i < HOERSAAL_REIHEN; i++) {
-		printf("|");
-		for (int j = 0; j < HOERSAAL_SPALTEN; j++) {
-			if (matrix[i][j] == 0)
-				printf(" |");
-			else
-				printf("*|");
-		}
-		printf("\n");
-	}
-	return;
-}
+void ausgabeHoersaal(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN]);
 
 void platzOlli(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN]);
 
@@ -35,6 +23,8 @@ int main() {
 	platzOlli(matrixHoersaal);
 
 	ausgabeHoersaal(matrixHoersaal);
+
+	printf("Es sind %d Plaetze belegt.", zaehleBelegtePlaetze(matrixHoersaal));
 
 	return 0;
 }
@@ -62,4 +52,32 @@ void platzOlli(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN]) {
 	matrix[0][platzOlli - 1] = 1;
 
 	return;
+}
+
+/// Ziel: Hörsaal wird in der Konsole ausgegeben
+/// Parameter: Auszugebene Matrix
+/// Return:	/
+void ausgabeHoersaal(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN]) {
+	for (int i = 0; i < HOERSAAL_REIHEN; i++) {
+		printf("|");
+		for (int j = 0; j < HOERSAAL_SPALTEN; j++) {
+			if (matrix[i][j] == 0)
+				printf(" |");
+			else
+				printf("*|");
+		}
+		printf("\n");
+	}
+	return;
+}
+
+int zaehleBelegtePlaetze(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN]) {
+	int anzahlStudenten = 0;
+	for (int i = 0; i < HOERSAAL_REIHEN; i++) {
+		for (int j = 0; j < HOERSAAL_SPALTEN; j++) {
+			if(matrix[i][j] != 0)
+				anzahlStudenten++;
+		}
+	}
+	return anzahlStudenten;
 }
