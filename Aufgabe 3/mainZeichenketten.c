@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "myString.h"
 
-#define MAXIMAL_LAENGE 15
+#define MAXIMAL_LAENGE 15							//Maximale Länge der Zeichenketten
 
 int main() {
 	char string1[MAXIMAL_LAENGE+1] = "";		
