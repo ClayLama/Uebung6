@@ -159,8 +159,7 @@ int platzFrei(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN], int reihePlatz, int
 		//Sonderfall: Rechter Platz bereits durch Olli belegt
 		if (matrix[reihePlatz][spaltePlatz + 1])
 			return 0;
-		//Sitznachbar hat bereits Sitznachbar
-		if (spaltePlatz >= 2) {
+		//Sitznachbar hat bereits Sitznachbar		if (spaltePlatz >= 2) {
 			if (matrix[reihePlatz][spaltePlatz - 2])
 				return 0;
 		}

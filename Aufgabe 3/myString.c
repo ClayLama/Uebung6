@@ -4,3 +4,9 @@ int myStrlen(char s[]) {
 		zaehler++;
 	return zaehler;
 }
+
+int leseString(char string, maximalLaenge) {
+	int korrekteEingabe = 0;
+
+	korrekteEingabe = fgets(string, maximalLaenge, stdin);
+}
