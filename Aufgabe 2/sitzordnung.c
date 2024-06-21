@@ -24,14 +24,7 @@ int zaehleBelegtePlaetze(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN]);
 int platzFrei(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN], int reihePlatz, int spaltePlatz);
 
 int main() {
-	int matrixHoersaal[HOERSAAL_REIHEN][HOERSAAL_SPALTEN];	//Plätze des Hörsaals gespeichert als Matrix (0=Frei/1=Besetzt)
-
-	//Initialisierung der Matrix mit Nullen
-	for (int i = 0; i < HOERSAAL_REIHEN; i++) {
-		for (int j = 0; j < HOERSAAL_SPALTEN; j++) {
-			matrixHoersaal[i][j] = 0;
-		}
-	}
+	int matrixHoersaal[HOERSAAL_REIHEN][HOERSAAL_SPALTEN] = { 0 };	//Plätze des Hörsaals gespeichert als Matrix (0=Frei/1=Besetzt)
 
 	//Olli wird in der ersten Reihe platziert
 	platziereOlli(matrixHoersaal);
