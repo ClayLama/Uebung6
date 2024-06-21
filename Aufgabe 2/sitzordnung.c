@@ -109,7 +109,7 @@ int zaehleBelegtePlaetze(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN]) {
 
 /// Ziel: Es wird eine Geprüft, ob der gegebene Sitzplatz frei ist
 /// Parameter: Hörsaal-Matrix, Reihe und Spalte des zu prüfenden Sitzplatzes
-/// Return:	/
+/// Return:	0 = Platz darf nicht belegt werden / 1 = Platz darf belegt werden
 int platzFrei(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN], int reihePlatz, int spaltePlatz) {
 	//Falsche Parameter werden abgefangen
 	if (reihePlatz < 0 || reihePlatz > HOERSAAL_REIHEN - 1 || spaltePlatz < 0 || spaltePlatz > HOERSAAL_SPALTEN - 1)
