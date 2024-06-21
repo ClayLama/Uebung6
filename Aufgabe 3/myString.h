@@ -1,1 +1,1 @@
-#pragma once
+int myStrlen(char s[]);

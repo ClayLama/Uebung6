@@ -28,6 +28,13 @@ int platzFrei(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN], int reihePlatz, int
 int main() {
 	int matrixHoersaal[HOERSAAL_REIHEN][HOERSAAL_SPALTEN] = { 0 };	//Plätze des Hörsaals gespeichert als Matrix (0=Frei/1=Besetzt)
 
+	//Startnachricht
+	printf("******************************************************\n");
+	printf("*                                                    *\n");
+	printf("*               Sitzordnung im H\x94rsaal               *\n");
+	printf("*                                                    *\n");
+	printf("******************************************************\n\n");
+
 	//Olli wird in der ersten Reihe platziert
 	platziereOlli(matrixHoersaal);
 	
@@ -49,6 +56,7 @@ int main() {
 
 	return 0;
 }
+
 /// Ziel: Hörsaal wird in der Konsole ausgegeben
 /// Parameter: Auszugebene Matrix
 /// Return:	/
@@ -139,22 +147,19 @@ int platzFrei(int matrix[HOERSAAL_REIHEN][HOERSAAL_SPALTEN], int reihePlatz, int
 	else if (spaltePlatz == 0 && matrix[reihePlatz][spaltePlatz + 1])
 		return 0;
 
-
-
 	//Sonderfall 2. Platz von Rechts
 	if (spaltePlatz == HOERSAAL_SPALTEN - 2 && matrix[reihePlatz][spaltePlatz + 1])
 		return 0;
 
-	//Allgemein
+	//Allgemein (links besetzt)
 	if (matrix[reihePlatz][spaltePlatz - 1]) {
 		//Sondefall 2. Platz von Links
 		if (spaltePlatz == 1)
 			return 0;
-
-		//Rechter Platz von Olli belegt
+		//Sonderfall: Rechter Platz bereits durch Olli belegt
 		if (matrix[reihePlatz][spaltePlatz + 1])
 			return 0;
-		//Sitznachbar hat keinen Platz
+		//Sitznachbar hat bereits Sitznachbar
 		if (spaltePlatz >= 2) {
 			if (matrix[reihePlatz][spaltePlatz - 2])
 				return 0;

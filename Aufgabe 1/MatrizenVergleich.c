@@ -67,7 +67,7 @@ int main() {
 
 		//Abfrage, ob das Programm wiederholt werden soll
 		printf("\n\n");
-		printf("Wollen Sie weiter Matrizen vergleichen? (j/n): ");
+		printf("Moechten Sie eine weitere Matrix vergleichen? (j/n): ");
 		eingabeWiederholung = _getche();
 		if ((eingabeWiederholung == 'j' || eingabeWiederholung == 'J'))
 			schleife = 1;
