@@ -1,3 +1,5 @@
+//Übung 6, Aufgabe 1: "matrizenVergleich.c" (20.06.2024) (Autoren:  Leif Kendelbacher, Mattis Schreiner)
+//Programm zum vergleichen und Ausgabe zweier Matrizen
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>

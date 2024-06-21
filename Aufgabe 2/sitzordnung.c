@@ -1,3 +1,5 @@
+//Übung 6, Aufgabe 2: "sitzordnung.c" (21.06.2024) (Autoren:  Leif Kendelbacher, Mattis Schreiner)
+//Programm zur berechnung und Ausgabe der einer perfekten Sitzordnung nach bestimmten Vorgaben
 #include <stdio.h>
 
 #define HOERSAAL_REIHEN 12
