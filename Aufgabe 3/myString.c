@@ -57,9 +57,9 @@ int myStrchr(char s[], char c) {
 	return -1;		//Nichts gefunden
 }
 
-/// Ziel: Es wird in gegebenen String nach bestimmten Zeichen gesucht
+/// Ziel: Es wird in gegebenen String nach bestimmten Zeichen gesucht 
 /// Parameter: Zeichenkette; Zeichen nach dem gesucht werden soll
-/// Return:	-1 = Zeichen nicht im String; Sonst Index des ersten Vorkommens des Zeichens
+/// Return:	-1 = Zeichen nicht im String; Sonst Index des letzten Vorkommens des Zeichens
 int myStrrchr(char s[], char c) {
 	int letzteStelle = 0;		//Stringlänge wird bestimmt
 	int zaehler = 0;			//Zählt die Indexe des Strings durch
@@ -71,6 +71,6 @@ int myStrrchr(char s[], char c) {
 		if (s[letzteStelle-zaehler] == c)
 			return (letzteStelle - zaehler)+1;
 		zaehler++;
-	} while (letzteStelle - zaehler);
+	} while ((letzteStelle - zaehler) >= 0);
 	return -1;		//Nichts gefunden
 }

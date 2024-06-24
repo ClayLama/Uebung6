@@ -50,12 +50,14 @@ int main() {
 		printf("my_strchr: Der Buchstabe \"%c\" befindet sich an Position %d bei der Vorwaertssuche. (Zeichenkette 1)", zeichen[0], myStrchr(string1, zeichen[0]));
 	else
 		printf("my_strchr: Der Buchstabe \"%c\" befindet sich nicht in der Zeichenkette 1.", zeichen[0]);
+	printf("\n\n");
 
 	//Ausgabe gesuchtes Zeichen Vorwärtssuche
 	if (myStrrchr(string2, zeichen[0]) != -1)
-		printf("my_strchr: Der Buchstabe \"%c\" befindet sich an Position %d bei der Rueckwaertssuche. (Zeichenkette 2)", zeichen[0], myStrrchr(string2, zeichen[0]));
+		printf("my_strrchr: Der Buchstabe \"%c\" befindet sich an Position %d bei der Rueckwaertssuche. (Zeichenkette 2)", zeichen[0], myStrrchr(string2, zeichen[0]));
 	else
-		printf("my_strchr: Der Buchstabe \"%c\" befindet sich nicht in der Zeichenkette 2.", zeichen[0]);
+		printf("my_strrchr: Der Buchstabe \"%c\" befindet sich nicht in der Zeichenkette 2.", zeichen[0]);
+	printf("\n\n");
 
 	return 0;
 }
