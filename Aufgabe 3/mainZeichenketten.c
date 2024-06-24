@@ -19,11 +19,11 @@ int main() {
 	//Eingabe 1
 	printf("Geben Sie den ersten String ein:  ");
 	while (!leseString(string1, MAXIMAL_LAENGE+1))
-		printf("Bitte geben Sie eine Zeichenkette mit maximal %d Zeichen ein: ", MAXIMAL_LAENGE);
+		printf("Bitte geben Sie eine Zeichenkette ohne Leerzeichen mit maximal %d Zeichen ein: ", MAXIMAL_LAENGE);
 	//Eingabe 2
 	printf("Geben Sie den zweiten String ein: ");
 	while (!leseString(string2, MAXIMAL_LAENGE+1))
-		printf("Bitte geben Sie eine Zeichenkette mit maximal %d Zeichen ein: ", MAXIMAL_LAENGE);
+		printf("Bitte geben Sie eine Zeichenkette ohne Leerzeichen mit maximal %d Zeichen ein: ", MAXIMAL_LAENGE);
 
 	//Ausgabe Länge
 	printf("\n");
