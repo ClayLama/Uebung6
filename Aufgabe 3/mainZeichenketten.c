@@ -59,5 +59,12 @@ int main() {
 		printf("my_strrchr: Der Buchstabe \"%c\" befindet sich nicht in der Zeichenkette 2.", zeichen[0]);
 	printf("\n\n");
 
+	//Ausgabe addierte Strings
+	if (myStrcat(string1, string2, 15) == 0)
+		printf("Der zusammengefuegte String: %s", string1);
+	else
+		printf("Die Strings konnten nicht zusammengefuegt werden. (Laenge > %d)", MAXIMAL_LAENGE);
+	printf("\n\n");
+
 	return 0;
 }

@@ -74,3 +74,20 @@ int myStrrchr(char s[], char c) {
 	} while ((letzteStelle - zaehler) >= 0);
 	return -1;		//Nichts gefunden
 }
+
+/// Ziel: Es werden zwei Strings in einem gespeichert 
+/// Parameter: String1, String2, Maximallänge zusammen
+/// Return:	-1 = Funktion gescheitert, 0 = erfolgreich ausgeführt
+int myStrcat(char s1[], char s2[], int n) {
+	int laenge1 = myStrlen(s1);
+	int laenge2 = myStrlen(s2);
+
+	//Fehleefall: Strings zu lang
+	if (laenge1 + laenge2 > n)
+		return -1;
+
+	for (int i = 0; i < laenge2; i++)
+		s1[i + laenge1] = s2[i];
+	s1[laenge2 + laenge1] = '\0';
+	return 0;
+}
