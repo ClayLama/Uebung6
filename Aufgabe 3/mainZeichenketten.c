@@ -6,8 +6,9 @@
 #define MAXIMAL_LAENGE 15							//Maximale Länge der Zeichenketten
 
 int main() {
-	char string1[MAXIMAL_LAENGE+1] = "";		
-	char string2[MAXIMAL_LAENGE+1] = "";			//Vektoren, in dem die Eingaben gespeichert werden
+	char string1[MAXIMAL_LAENGE + 1] = "";
+	char string2[MAXIMAL_LAENGE + 1] = "";			//Vektoren, in dem die Eingaben gespeichert werden
+	char zeichen[2] = "";								//Eingegebenes Zeichen
 
 	//Startnachricht
 	printf("******************************************************\n");
@@ -18,12 +19,16 @@ int main() {
 
 	//Eingabe 1
 	printf("Geben Sie den ersten String ein:  ");
-	while (!leseString(string1, MAXIMAL_LAENGE+1))
+	while (!leseString(string1, MAXIMAL_LAENGE + 1))
 		printf("Bitte geben Sie eine Zeichenkette ohne Leerzeichen mit maximal %d Zeichen ein: ", MAXIMAL_LAENGE);
 	//Eingabe 2
 	printf("Geben Sie den zweiten String ein: ");
-	while (!leseString(string2, MAXIMAL_LAENGE+1))
+	while (!leseString(string2, MAXIMAL_LAENGE + 1))
 		printf("Bitte geben Sie eine Zeichenkette ohne Leerzeichen mit maximal %d Zeichen ein: ", MAXIMAL_LAENGE);
+	//Eingabe 3
+	printf("Geben Sie ein Zeichen ein: ");
+	while (!leseString(zeichen, 2))
+		printf("Bitte geben Sie nur ein Zeichen ein: ");
 
 	//Ausgabe Länge
 	printf("\n");
@@ -39,6 +44,18 @@ int main() {
 	else
 		printf("Die Strings sind unterschiedlich lang.");
 	printf("\n\n");
+
+	//Ausgabe gesuchtes Zeichen Vorwärtssuche
+	if (myStrchr(string1, zeichen[0]) != -1)
+		printf("my_strchr: Der Buchstabe \"%c\" befindet sich an Position %d bei der Vorwaertssuche. (Zeichenkette 1)", zeichen[0], myStrchr(string1, zeichen[0]));
+	else
+		printf("my_strchr: Der Buchstabe \"%c\" befindet sich nicht in der Zeichenkette 1.", zeichen[0]);
+
+	//Ausgabe gesuchtes Zeichen Vorwärtssuche
+	if (myStrrchr(string2, zeichen[0]) != -1)
+		printf("my_strchr: Der Buchstabe \"%c\" befindet sich an Position %d bei der Rueckwaertssuche. (Zeichenkette 2)", zeichen[0], myStrrchr(string2, zeichen[0]));
+	else
+		printf("my_strchr: Der Buchstabe \"%c\" befindet sich nicht in der Zeichenkette 2.", zeichen[0]);
 
 	return 0;
 }

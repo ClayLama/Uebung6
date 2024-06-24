@@ -42,3 +42,35 @@ int myStrcmp(char string1[], char string2[]) {
 		return 2;								//Länge ungleich -> Ausgabe 2
 	return 0;									//Länge gleich und Chars identisch -> Ausgabe 0
 }
+
+/// Ziel: Es wird in gegebenen String nach bestimmten Zeichen gesucht
+/// Parameter: Zeichenkette; Zeichen nach dem gesucht werden soll
+/// Return:	-1 = Zeichen nicht im String; Sonst Index des ersten Vorkommens des Zeichens
+int myStrchr(char s[], char c) {
+	int zaehler = 0;			//Zählt die Indexe des Strings durch
+	//Sucht von links nach Buchstaben, bis gefunden
+	do {
+		if (s[zaehler] == c)
+			return zaehler+1;
+		zaehler++;
+	} while (s[zaehler] != '\0');
+	return -1;		//Nichts gefunden
+}
+
+/// Ziel: Es wird in gegebenen String nach bestimmten Zeichen gesucht
+/// Parameter: Zeichenkette; Zeichen nach dem gesucht werden soll
+/// Return:	-1 = Zeichen nicht im String; Sonst Index des ersten Vorkommens des Zeichens
+int myStrrchr(char s[], char c) {
+	int letzteStelle = 0;		//Stringlänge wird bestimmt
+	int zaehler = 0;			//Zählt die Indexe des Strings durch
+
+	letzteStelle = myStrlen(s)-1;
+
+	//Sucht von rechts nach Buchstaben, bis gefunden
+	do {
+		if (s[letzteStelle-zaehler] == c)
+			return (letzteStelle - zaehler)+1;
+		zaehler++;
+	} while (letzteStelle - zaehler);
+	return -1;		//Nichts gefunden
+}
