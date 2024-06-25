@@ -22,3 +22,5 @@ int myStrchr(char s[], char c);
 /// Parameter: Zeichenkette; Zeichen nach dem gesucht werden soll
 /// Return:	-1 = Zeichen nicht im String; Sonst Index des letzten Vorkommens des Zeichens
 int myStrrchr(char s[], char c);
+
+int myStrcat(char s1[], char s2[], int n);
